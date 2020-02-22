@@ -1,0 +1,85 @@
+<html>
+<head>
+    {% block title %}
+    <title>Update Student Page</title>
+        {% include 'student/cdnlines.html' %}
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h2 class="text-center">Edit Student Details Here..</h2>
+            <form method="post" action="/update/{{ student.id }}">
+                {% csrf_token %}
+                <label>Enter Student Roll No:</label>
+                <input type="number" name="roll" class="form-control" value="{{ student.roll }}" readonly>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter First Name:</label>
+                        <input type="text" name="fname" class="form-control" value="{{ student.first_name }}">
+                    </div>
+
+                    <div class="col-md-6">
+                            <label>Enter Last Name:</label>
+                            <input type="text" name="lname" class="form-control" value="{{ student.last_name }}">
+                        </div>
+
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Student Class Name:</label>
+                        <input type="text" name="sclass" class="form-control" value="{{ student.student_class }}">
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Student Section:</label>
+                        <input type="text" name="section" class="form-control" value="{{ student.student_section }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Telgu Mark</label>
+                        <input type="number" name="telgu" class="form-control" value="{{ student.telgu_mark }}">
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Hindi Marks</label>
+                        <input type="number" name="hindi" class="form-control" value="{{ student.hindi_mark }}">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter English Mark</label>
+                        <input type="number" name="eng" class="form-control" value="{{ student.english_mark }}">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Math Marks</label>
+                        <input type="number" name="math" class="form-control" value="{{ student.math_mark }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Science Marks</label>
+                        <input type="number" name="science" class="form-control" value="{{ student.science_mark }}">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Social Mark</label>
+                        <input type="number" name="social" class="form-control" value="{{ student.social_mark }}">
+                    </div>
+                </div>
+                    <center>
+
+                        <input type="submit" value="Update" class="btn btn-success">
+
+                    </center>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

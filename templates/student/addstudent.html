@@ -1,0 +1,98 @@
+
+<html>
+<head>
+    {% block title %}
+    <title>Add Student Page</title>
+        {% include 'student/cdnlines.html' %}
+    {% endblock %}
+</head>
+<body>
+<style>
+    body{
+        background-image:  url(https://i7.pngguru.com/preview/902/1001/285/light-eye-graphic-design-science-optical-brain-encrypted.jpg);
+    }
+    form{
+        box-shadow: 0 0 10px;
+        border-radius: 10px;
+    }
+    .btn{
+        margin-top: 5px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h2 class="text-center">Add Student Details Here..</h2>
+            <form method="post" action="/create">
+                {% csrf_token %}
+                <label>Enter Student Roll No:</label>
+                <input type="number" name="roll" class="form-control">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter First Name:</label>
+                        <input type="text" name="fname" class="form-control">
+                    </div>
+
+                    <div class="col-md-6">
+                            <label>Enter Last Name:</label>
+                            <input type="text" name="lname" class="form-control">
+                        </div>
+
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Student Class Name:</label>
+                        <input type="text" name="sclass" class="form-control">
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Student Section:</label>
+                        <input type="text" name="section" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Telgu Mark</label>
+                        <input type="number" name="telgu" class="form-control">
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Hindi Marks</label>
+                        <input type="number" name="hindi" class="form-control">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter English Mark</label>
+                        <input type="number" name="eng" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Math Marks</label>
+                        <input type="number" name="math" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Enter Science Marks</label>
+                        <input type="number" name="science" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Enter Social Mark</label>
+                        <input type="number" name="social" class="form-control">
+                    </div>
+                </div>
+                    <center>
+                        <input type="submit" value="Add" class="btn btn-success">
+                        <input type="reset" value="clear" class="btn btn-danger">
+
+                    </center>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
